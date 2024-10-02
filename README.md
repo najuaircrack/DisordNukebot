@@ -25,7 +25,7 @@ Before running the bot, make sure you have the following installed:
 ⬇️ First, clone the repo to your local machine:
 
 
-`git clone https://github.com/najuaircrack/nukebot.git`
+`git clone https://github.com/najuaircrack/nukebot.git\n`
 `cd nukebot`
 
 
