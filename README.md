@@ -1,6 +1,6 @@
 
 # Nukebot 🚀  
-*A simple nuke bot by Naju*  
+*A simple nuke bot by Najuaircrack*  
 **⚠ For educational purposes only! ⚠**
 
 ## Introduction  
@@ -25,18 +25,20 @@ Before running the bot, make sure you have the following installed:
 ⬇️ First, clone the repo to your local machine:
 
 
-`git clone https://github.com/najuaircrack/nukebot.git\n`
+`git clone https://github.com/najuaircrack/nukebot.git`
+
+### Step 2: Cd to Repository
 `cd nukebot`
 
 
-### Step 2: Install dependencies  
+### Step 3: Install dependencies  
 📦 Install the necessary Python packages:
 
-\`\`\`
+`
 pip install -r requirements.txt
-\`\`\`
+`
 
-### Step 3: Set up the bot token  
+### Step 4: Set up the bot token  
 🔑 Before running the bot, update your bot token:
 
 1. Open the \`main.py\` file.
@@ -50,14 +52,14 @@ pip install -r requirements.txt
 Once everything is set up, you can run the bot on any platform.
 
 ### 💻 Windows:
-\`\`\`
+`
 python main.py
-\`\`\`
+`
 
 ### 🐧 Linux/macOS:
-\`\`\`
+`
 python3 main.py
-\`\`\`
+`
 
 ---
 
