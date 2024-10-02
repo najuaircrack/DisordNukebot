@@ -24,10 +24,10 @@ Before running the bot, make sure you have the following installed:
 ### Step 1: Clone the repository  
 ⬇️ First, clone the repo to your local machine:
 
-\`\`\`
-git clone https://github.com/najuaircrack/nukebot.git
-cd nukebot
-\`\`\`
+
+`git clone https://github.com/najuaircrack/nukebot.git`
+`cd nukebot`
+
 
 ### Step 2: Install dependencies  
 📦 Install the necessary Python packages:
