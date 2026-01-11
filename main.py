@@ -1,4 +1,4 @@
-# Nukebot by Naju
+
 # This bot is for educational purposes only. Please use it responsibly and only on servers where you have explicit permission.
 # Unauthorized or malicious use of this bot may lead to bans or legal consequences.
 
